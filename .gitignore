@@ -1,0 +1,8 @@
+/app/models/*
+/build
+/dist
+.venv
+.vscode
+.idea
+node_modules
+*.spec

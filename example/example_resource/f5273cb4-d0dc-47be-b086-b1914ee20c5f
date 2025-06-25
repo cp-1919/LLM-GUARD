@@ -1,0 +1,1742 @@
+火力与指挥控制
+
+Fire Control & Command Control
+
+ISSN 1002-0640,CN 14-1138/TJ
+
+《火力与指挥控制》网络首发论文
+
+题目：
+弹道导弹目标主动段跟踪与预报技术综述
+作者：
+吉瑞萍，梁彦
+收稿日期：
+2024-04-25
+网络首发日期：  2024-10-31
+引用格式：
+
+吉瑞萍，梁彦．弹道导弹目标主动段跟踪与预报技术综述[J/OL]．火力与指挥
+控制. https://link.cnki.net/urlid/14.1138.TJ.20241031.1016.002
+
+网络首发：在编辑部工作流程中，稿件从录用到出版要经历录用定稿、排版定稿、整期汇编定稿等阶
+
+段。录用定稿指内容已经确定，且通过同行评议、主编终审同意刊用的稿件。排版定稿指录用定稿按照期
+
+刊特定版式（包括网络呈现版式）排版后的稿件，可暂不确定出版年、卷、期和页码。整期汇编定稿指出
+
+版年、卷、期、页码均已确定的印刷或数字出版的整期汇编稿件。录用定稿网络首发稿件内容必须符合《出
+
+版管理条例》和《期刊出版管理规定》的有关规定；学术研究成果具有创新性、科学性和先进性，符合编
+
+辑部对刊文的录用要求，不存在学术不端行为及其他侵权行为；稿件内容应基本符合国家有关书刊编辑、
+
+出版的技术标准，正确使用和统一规范语言文字、符号、数字、外文字母、法定计量单位及地图标注等。
+
+为确保录用定稿网络首发的严肃性，录用定稿一经发布，不得修改论文题目、作者、机构名称和学术内容，
+
+只可基于编辑规范进行少量文字的修改。
+
+出版确认：纸质期刊编辑部通过与《中国学术期刊（光盘版）》电子杂志社有限公司签约，在《中国
+
+学术期刊（网络版）》出版传播平台上创办与纸质期刊内容一致的网络版，以单篇或整期出版形式，在印刷
+
+出版之前刊发论文的录用定稿、排版定稿、整期汇编定稿。因为《中国学术期刊（网络版）》是国家新闻出
+
+版广电总局批准的网络连续型出版物（ISSN 2096-4188，CN 11-6037/Z），所以签约期刊的网络版上网络首
+发论文视为正式出版。
+
+网络首发时间：2024-10-31 15:19:21
+网络首发地址：https://link.cnki.net/urlid/14.1138.TJ.20241031.1016.002
+
+火 力 与 指 挥 控 制
+
+FireControl&CommandControl
+
+弹道导弹目标主动段跟踪与预报技术综述
+
+（1. 西安科技大学电气与控制工程学院，西安 710054；2. 西北工业大学自动化学院，西安 710072）
+
+吉瑞萍 1，梁 彦2*
+
+摘要： 主动段拦截是多层反导防御体系中的第一道屏障，高精度的弹道导弹目标跟踪与预报是主动段拦截成
+
+功的重要前提和基础。主动段跟踪与预报的主要目的是输出目标导弹在当前及未来时刻的运动状态估计值和相关
+
+弹道参数。从弹道导弹目标主动段实时跟踪与轨迹预报两方面，对国内外研究现状及发展动态进行了综述。回顾了
+
+主动段跟踪中涉及的主动段运动建模和状态估计方法；将弹道导弹轨迹预报归纳为轨道解析 、数值积分和函数逼近
+
+3 类方法，并对各类方法的特点进行了分析；最后总结并展望了该领域的技术发展方向。
+
+关键词：弹道导弹；主动段防御；目标跟踪；轨迹预报
+中图分类号：V19；TJ76
+
+文献标识码：A
+
+OverviewofBoost-phaseTrackingandPredictionfor
+
+BallisticMissileTargets
+
+JIRuiping 1，LIANGYan 2*
+
+（1. CollegeofElectricalandControlEngineering ，Xi’anUniversityofScienceandTechnology
+
+，Xi’an 710054，China；
+
+2. SchoolofAutomation ，NorthwesternPolytechnicalUniversity ，Xi’an 710072，China）
+
+Abstract：
+
+Boost-phaseinterceptionisthefirstbarrierin amulti-layeranti-missiledefense
+
+system.Highprecisionballisticmissiletrackingandpredictionareimportantprerequisitesand
+foundationsforsuccessfulboost-phaseinterception.Themainpurposeofboost-phasetrackingand
+predictionistooutputtheestimatedmotionstateandrelatedballisticparametersofthetargetmissile
+inthecurrentandfuturetime.Thispaperreviewstheresearchstatusanddevelopmenttrendsof
+ballisticmissileboost-phasereal-timetrackingandtrajectoryprediction.Firstly
+
+，
+
+motionmodelingandstateestimationmethodsinvolvedinboost-phasetrackingarereviewed.Then
+：
+trajectorypredictionofballisticmissilesisclassifiedintothreecategoriesofmethods
+orbitalanalysis
+numericalintegration
+Finally
+
+，
+andthecharacteristicsofeachcategoryareanalyzed.
+
+thedevelopmentdirectionoftechnologyinthisfieldissummarizedandprospected.
+boost-phasedefense
+
+；
+trajectoryprediction
+
+andfunctionapproximation
+
+ballisticmissiles
+
+Keywords ：
+
+targettracking
+
+，
+
+，
+
+；
+
+；
+
+theboost-phase
+，
+the
+，
+
+0 引言
+
+作用下，按照预定轨迹飞行的导弹。具有射程远、速
+度快、精度高 、威力大、突防强、可全天候作战等优
+
+弹道导弹指在火箭发动机推力 和制导系统的
+
+点，是现代战争中的杀手锏武器。目前，全世界有 40
+
+收稿日期：2024-04-25
+作者简介：吉瑞萍（1991—），女，山西运城人，博士，讲师。
+
+修回日期：2024-07-16
+
+*
+
+通信作者：梁彦（ 1971—），男，河南新乡人，博士，教授，博士生导师。
+
+多个国家 / 地区拥有弹道导弹，其中，11 个国家 / 地
+区的弹道导弹 最大射程超过 1000km ，8 个国家 /
+地区可以在弹道导弹上加装核弹头［ 1］。并且我国周
+边多数国家 / 地区（包括日本、印度、韩国等）都在积
+极研制和大量装备弹道导弹，对国家安全构成严重
+威胁。鉴于近年发生的中印边境冲突等事件，我国与
+
+周边部分国家或地区发生冲突的可能性增大，面临
+的弹道导弹威胁也急剧增加。为寻求战略平衡，亟需
+提升现有导弹防御系统，以备实战应对和威胁制衡
+可能的弹道导弹攻击。
+
+弹道导弹从发 射点到弹着点的整个路径通常
+分为 3 个阶段：主动 / 助推段、自由 / 中段和 再入 /
+
+末段，如图 1 所示。现役导弹防御系统几乎都集于
+中段和末段拦截，如地基中段防御系 统（GMD）、宙
+斯盾海基中段防御系统（BMD）、末段高层区域防御
+系 统 （THAAD）、 爱 国 者 -3 末 段 低 层 防御 系 统
+（PAC-3）等［ 2］。中段拦截的优势在于弹道导弹的中
+段飞行时间长，且中段弹道 可以被精确地预测出
+来，因此，仅需在有限地点部署中段拦截弹 即可达
+到防御效果；末段拦截的 优势为空气动力，可以将
+
+较轻的诱饵与较重的弹 头区分 开来，还可以保卫
+面积较小的区域免遭从任何地方发射来的弹道导
+弹攻击［ 3］。然而，当前多数弹道导弹具有携带多枚
+弹头、释放诱饵假目标、雷达 / 红外隐身 / 干扰、再
+入机动变轨、末段加速等突 防手段，这些突防手段
+给中段和末段拦截带来了严峻的挑战［ 4］。
+
+图 1 弹道导弹飞行过程示意图
+
+Fig. 1 Flightprocessofballisticmissiles
+
+随着预警探测装备和拦截武器的迅速发展，部
+分国家将越来越多的目光投向主动段拦截［ 5-13］，如
+美国在 2021 年 2 月发布的“美国弹道导弹防御系
+统 2.0”新增了主动段拦截计 划［ 14］，并于 2022 年 6
+月发布了“助推段导弹防御”报告［ 15］。当前美军在关
+岛构建的全面多层次的导弹防御系 统、AN/TPY-2
+雷达在日韩的前置部署、AN/TPY-2 雷达与“宙斯
+盾”作战系统的联合反导试验等，都为主动段拦截
+
+提供了基础。我国学者也分别从主动段反导的作战
+需求［ 4］、作战特点［ 5］、作战模式［ 9］、总体方案［ 11］等
+
+方面进行了相关研究。与中段和 末段拦截相 比，主
+动阶段拦截有如下优势［ 8，10］：1）识别度高，弹道导
+弹在主动段飞行时具有清晰的尾焰标记和热信号，
+便于拦截弹搜索和瞄准目标；2）成功率高，弹道导
+弹在主动段飞行时不会释放诱饵，且缺乏相应的突
+防和对 抗措施，如果拦截成功，目标导弹本身的大
+部分对抗措施将“胎死腹中；3）清洁度高，可将目标
+
+导弹摧毁在对手领土附近，不必过于担心中段或末
+段拦截的残余导弹落入或污染己方国土；4）防护面
+积大，由于目标导弹在主动段 飞行时即被拦截，主
+动段拦截可保护更大的国土面积，实现全面防御的
+战略目标；5）补救措施多，主动阶段拦截失败后还
+
+可以在目标导弹的中段和 末段进行拦截，提高了防
+御系统的整体拦截概率。因此，研究和发展主动段
+拦截是完善弹道导弹防御体系的重要 组成部分。
+
+主动段拦截在 具有众多优势的同时也面临着
+预警探测、制导控制、火力拦截等多方面的挑战。本
+
+文重点关注主动段预警探测中的目标跟踪与轨迹
+预报技术，它对导弹袭击进行跟踪 以及预警，为反
+导拦截作战提供宝贵的预警时间和目标引导信息，
+是防御方 掌握威胁态势、进行作战任务规划、制定
+拦截方案的依据。
+
+弹道导弹目标主动段跟踪与预报的基 本想定
+为：由天基红外卫星、天波超视距雷达、前置地基雷
+达等传感器对弹道导弹目标进行 持续跟踪，估计其
+位置、速度等状态信息与发射点、射向等弹道参数，
+
+并根据目标导弹当前的运动状态 信息，对后续飞行
+时刻主动段轨迹进行预报。下面从主动段实时跟踪
+与轨迹预报两方面，对国内外研究现状及发展动态
+
+进行综述。
+
+1 弹道导弹主动段跟踪
+
+弹道导弹主动段跟踪 问题主要包括两部分：1）
+主动段运动模 型，它是进行实时跟踪的基础，用准
+
+确的运动模型表征目标导弹当前运动 特点，可实现
+好的跟踪效果；2）主动段状态估计方法， 它是实现
+目标跟踪的核心技术，指利用滤波算法对目标运动
+模型和获取的量测信息进行处理，从而估计目标运
+动状态。
+1.1 主动段运动建模
+
+弹道导弹在主动段主要 受到推力、重力、气 动
+阻力的影响。根据主动段飞行程序，即主动段俯仰
+角随时间变化的规律，主动段弹道可进一步细分为
+垂直上升段、转弯段、瞄准段［ 16-17］。为应对主动段受
+力的复杂性和运动的多阶段性，目前主要有两类主
+
+动段运动建模方法：基于模板建模和基于模型建模，
+如图 2 所示。
+
+的单站纯角度观测下弹道射向估计算法［ 23］；张涛等
+利用导弹的重推比、结构比和比冲量构造了推力加
+
+速度模板，通过加速度补偿导弹在重 力转弯段的近
+常速运动模型，解决了量测与数据库中模板的匹配
+识别问题［ 24］；张峰等基于主动段净加速度模板建立
+了主动段运动模型，一方面减少了对先验信息的依
+赖，另一方面保留了基于模板建模方法的高精度 优
+势［ 25］。此外，黄源研究了弹道导弹模板中推力加速
+度和导弹级数的提取方法，并针对这两类特征分别
+设计了两种不同的模板匹配方法，最后将两类特征
+
+的匹配结果，进行融合以获得最终的弹道模 板匹配
+结果［ 26］。虽然与获取标准弹道模板相比，弹道导弹
+特征参数模板获取难度大幅下降，并且由关注导弹
+标准弹道轮廓的表面特征转变为关注导弹动 力特
+性的本质特征，还是不能从根本上解决对导弹先验
+
+信息的过度依赖问题。
+1.1.2 基于模型建模
+
+基于模型的建模方法 包括运动学模型和导弹
+
+动力学模型。这类方法不考虑弹道轮廓信息，而是
+通过建立适当的数学模型来拟合主动段弹道，是目
+前研究的主要方向。下页表 1 中列出了几种典型的
+主动段模型。
+
+常用的目标运动学模型有匀加速（CA）模型、匀
+加加速（Jerk）模型［ 27］、多项式模型［ 28-29］、输入估计
+模型（IE）、一阶时间相关（Singer）模型［ 30］、当前统计
+（CS）模型［ 31-33］、样条函数［ 34-36］等。其中，WU 等采用
+多项式模型作为主动段弹道的运动模 型，将截断误
+差等效为过程噪声，根据未知输入、状态估计 误差
+
+和最优过程噪声方差之间的定量关系，由未知输入
+的估计值构造未知输入和过程噪声方差矩阵［ 28］；邱
+明劼等用三阶多项式拟合发射时间与弹道导弹 垂
+直位移的关系估计导弹发 射零时，再用三阶多项式
+拟合发射时间与射向的关系估计导弹发 射点的位
+置［ 29］；张峰等假定某一确定时间间隔内弹道导弹主
+动段加速度的变化率为常数，采用样条函数表示弹
+道导弹主动段运动［ 34］；张涛等采用三次样条函数对
+主动段弹道进行描述，并将弹道估计 问题转化为非
+线性最小二乘准则下的样条系数和 样条节 点分布
+最优估计问题［ 35］。运动学模型结构简单，跟踪鲁棒
+性好，在弹道导弹主动段跟踪中 获得了一定应用，
+
+但是存在两点主要缺陷：1）对不同坐标方向运动状
+态分量解耦处理，而弹道导弹飞行过程中各运动状
+态分量实际上是深度耦合在一起的；2）只能对位
+置、速度等目标运动 信息进行建模，无法输出 用于
+轨迹预报的关键未知参数信息。
+
+图 2 主动段运动建模
+
+Fig. 2 Motionmodelingofboostphase
+
+1.1.1 基于模板建模
+
+基于模板的建模方法主要 用于星载传感 器预
+警探测，克服无源量测不可观或弱可观的问题。它
+基于如下事实：全球弹道导弹的 类型有限，尤其是
+在某些热点区域部署的弹道导弹种类相对固定。因
+
+此，可以将各类弹道导弹主动段弹道模 板提前存储
+在标准弹道模板库中，作为估计弹道导弹在 星载观
+测下主动段运动的先验信息［ 18］。
+
+基于模板的建模方法中 最常用的是标 准弹道
+模板匹配算法，需要事先将不同类型 / 型号的弹道
+
+导弹的飞行高度和飞行水平距离 （即弹道轮廓）储
+存在数据库中，在 获得观 测数据后，将其与数据库
+中的弹道轮廓进行匹配，以估计弹道导弹在主动段
+的运动状态。李晓宇等通过基于标准弹道模板的主
+动段状态估计算法，获得了单星观测下弹道导弹关
+机点状态及估计误差［ 19］；李英良等假设主动段弹道
+近似在一个平面内，提出了标准弹道模板的射向平
+面匹配方法［ 20］；王雪峰等通过研究地球自转对主动
+段弹道非平面特性的影响，提出了一种基于模板的
+导弹关机点位置和速度估计修正方法［ 21］；申镇等通
+过动力学特性、标准飞行程序和相应的积分初值积
+分，得到了导弹的标 准弹道，并基于分段多项式及
+导弹飞行试验管道两种方式，获得了导弹的动 力特
+征，实现了单星预警［ 22］。
+
+由于标准弹道模板为高度机密信息，几乎不可
+
+能获得完整的标准弹道模板，这在一定程度上限制
+了此类算法的应用。为了克服标准弹道模板匹配算
+法不够实用的缺点，部分学者尝试以导弹的一 些设
+计参数表征导弹特征，并构建模板库。武立华等结
+合弹道平面切割模型，提出了基于推力加速 度模板
+
+表 1 弹道导弹跟踪中常用主动段模型
+
+Table1Boost-phasemodelscommonlyusedinballisticmissiletracking
+
+模型描述
+
+模型名称
+
+匀加速模型（CA）
+
+匀加加速模型（Jerk）
+
+一阶时间相关模型（Singer）
+
+当前统计模型（CS）
+
+重力转弯模型（GT）
+
+九态助推模型
+
+十态助推模型
+
+十态随机助推模型
+
+备注：v觶 为目标速度，w 为白噪声，为设计参数，aG 为重力加速度，v r 为目标相对地球的速度，U 为火箭排气速度，
+速度单位矢量、转向单位矢量、爬升单位矢量，浊 为空气密度，
+爬升升力参数。
+
+分别为
+分别为未知净加速度模值、质量耗散率、转向升力参数、
+
+与运动学模型不同，动力学模型通过考虑目标
+飞行的力学特性和运动特性，并基于目标运动 加速
+
+速度、质量耗散率的十维状态向量。十态随机助推
+模型将转向升力参数和 爬升升力参数建模为一 阶
+
+度建立模型，比运动学模型更能准确地反映主动段
+的运动特征。主动段的受力特点是在推力作用下持
+续加速，同时受到重力和气动力的影响实现转弯。
+常用的主动段动力学模型有重力转弯（GT）模型、九
+态助推模型、十态助推模型、十态随机助推模型等［37］，
+这些模型主要在 加速度建模精度与 描述加速度中
+未知量的演化模型方面有所不同。GT 模型假设弹
+道导弹在主动段的 攻角很小（几乎为零），导弹推力
+矢量方向平行于目标相对于地球速度矢量的方向，
+在地心惯性坐标系（ECI-CS）中构建包括目标三维
+
+位置、三维速度、净加速度模值、质量耗散率的八维
+状态向量。九态助推模型假设推力与攻角均为常
+值，在 ECI-CS 中构建包括三维位置、三维速度、三
+维推力加速度的九维状态向量。十态助推模型同时
+爬升坐标系
+考虑推力、阻力和升力，在速度
+
+转向
+
+（VTC-CS）中构建包括三维位置、三维速度、三维加
+
+-
+
+-
+
+马尔可夫过程，在 VTC-CS 中构建包括三维位置、
+三维速度、净加速度模值、质量耗散率、转向升力参
+数、爬升升力参数的十维状态向量。值得注意的是，
+上述模型中 GT 模型因符合主动段运动特性且形式
+简单，在跟踪领域最具研究价值。
+
+为了综合基于模板和基于模型的建模方法的
+优点，YI 等提出了一种基于轮廓的极大惩罚似然轨
+迹估计方法，通过引入净加速度曲线、轨迹约束和
+参数先验信息，来处理星载视 线量测可观测性差的
+问题［ 38］；储雪峰等通过引入有限的弹道导弹先验信
+息，得到了不完备推力加速 度模板，并将推力方向
+角增广到目标状态分量中，利用模板信息建立了精
+细的参数化动力学模型 ［ 39］；YI 等采用筛分法构造
+了一个通用净加速度模型（GNAM）和一种新的净加
+速度轮廓（NAP），并提出了一 种基于贝叶斯框架的
+多模型（包括 GNAM 和 NAP）轨迹推理方法［ 40］；张
+
+雪松等通过引入导弹动力特征模板，将飞行程序设
+计参数与发射方位角增广为目标状态分量，基于程
+序角模型和动力特征模板，构建了主动段 自适应模
+型集［ 41］。
+
+总体而言，基于模板建模需要事先获得较多的
+导弹参数 或者遍历敌方可能的弹道轨迹 获得主动
+段弹道数据。运动学模型为一般机动模型，对弹道
+
+导弹目标先验信息要求低，主要用途为主动段实时
+跟踪和短时预报。动力学模型利用了弹道导弹主动
+段部分先验知识，构建的模 型非线性强，包含多维
+未知且时变参数，在使用中需要对目标导弹运动状
+态与未知参数进行联合求解。
+1.2 主动段状态估计
+
+对于弹道导弹主动段运动状态估计 问题，鉴于
+目标动力学模型和传感器量测固有的非线性特性，
+非线性滤波方法被广泛应用于弹道导弹运动状态
+估计。
+
+国内外许多学者针对扩展卡尔曼滤波（EKF）［42-43］，
+无迹卡尔曼 滤波 （UKF） ［ 44-47］，容积卡尔曼滤波
+（CKF）［ 48-51］，粒子滤波（PF）［ 52-55］等非线性滤波方法
+在弹道导弹主动段跟踪中进行了 大量的应用研究。
+不同非线性滤波方法的特点如图 3 所示。孙雷等针
+
+对卫星在角度测量下对弹道导弹主动段跟踪面 临
+的可观测性弱、初始误差大等问题，提出了一种迭
+代 UKF 滤波算法，改善了状态均值和协方差估计［56］；
+薛高茹等为提升未知弹道参数 下主动段目标跟踪
+精度，提出了基 于期望最大化 的联合优化算法框
+架，在期望步基于 UKF 平滑得到目标状态和未知参
+数后验估计，在 最大化 步计算初始状态均值、协方
+差及过程噪声协方差［ 57］；MENEGAZ 等将主动段轨
+迹细分为垂直上升段、俯仰机动段、重力转弯段，引
+入了一种基于切换技术的滤波器，该滤波器在两个
+UKF 和一个具有时变状态转移矩阵 的交互式多模
+型（IMM）滤波器中进行顺序切换［ 58］；WANG 等提出
+了一种鲁棒高阶容积信息滤波器，在时间更新阶段
+
+利用五阶容积规则提高估计精度和数值 稳定性，在
+量测更新阶段采用 Huber 技术处理非高斯量测 噪
+声［ 59］；WU 等将主动段运动状态估计与运动模 型参
+数分离，先利用极大似然估计法获得运动模型参数
+估计，然后将其代入 CKF 滤波器得到运动状态估
+计［ 60］；KIM 等提出了一 种用于弹道导弹跟踪的 PF
+加速方法，采用 PF对高速运动的弹道目标进行跟
+踪，并利用图形处理器并行化加速 PF，以实现实时
+跟踪［ 61］。特别地，KIM 等对 EKF、UKF、PF 的跟踪性
+能进行了比较分析［ 62］，获得的结论为：由于 UKF 算
+
+法不需要线性化非线性方程，也不需要求解雅可比
+
+矩阵，并且可以避免 PF 算法的粒子退 化问题，因
+
+此，在计算量和计算精度上都非常符合导弹预警系
+
+统的实际应用需求。
+
+图 3 非线性滤波方法
+
+Fig. 3 Nonlinearfilteringmethods
+
+对于存在多级助推的弹道导弹，许登荣等提出
+
+了基于量测转换的强跟踪输入估计算法，对未知加
+速度进行实时估计，实现了无先验信息下利用单模
+型算法对弹道导弹进行跟踪［ 63］；梁小虎等构造了一
+种滤波残差均值延迟相关机动检测统计量，提出了
+
+根 据 机 动 检 测 结 果 实 时 切 换 机 动 频 率 的 自 适 应
+CS-UKF 主动段跟踪 算法［ 32］；刘丽丽等对 GT 模型
+进行改进，得到了三维重力转弯跟踪模 型，与 CKF
+
+结合设计了多 级弹道导弹目标主动段状态与参数
+联合估计算法［ 64］；陈映等提出了基 于 Jerk 模型和
+CA 模型组合的 IMM-UKF 对弹道目标主动段进行
+
+跟踪，通过模型集合中各模型的概率变化完成导弹
+关机时刻判定［ 27］；赵砚等建立了主动段 分级和关
+机所涉及的两级主动段模型和自由段模型，分别引
+
+入 UKF 和 IMM 处理非线性估计问题和不确定模
+式下的跟踪 问题［ 65］；钮俊清等设计了包含多个推
+力大小的主动段模型和自由段模型，提出了一种变
+结构多模型主动段跟踪方法［ 66］。此外，蔡莉等研究
+了贝叶斯框架下天波超视距雷达与红外预警卫星
+的主动段 融合跟踪算法［ 67］；张峰等基于多假设思
+想，研究了主动段防御中多枚弹道导弹 同时跟踪的
+问题［ 68］。
+
+上述文献回顾表明目前对 于弹道导弹主动段
+
+跟踪，从模型设计到估计器设计都较为成熟。然而，
+
+部分文献在处理涉及到的未知弹道参数 辨识时，仅
+
+是将未 知参数与目标状态 组成扩维状态向量进行
+
+非线性估计。这种基于状态增广的未知参数估计算
+
+法依赖于参数建模、初始状态及协方差的确定，不
+
+合理的先验信息将造成跟踪系 统的不稳定甚至发
+
+散。因此，需进一步研究弹道导弹主动段的 联合状
+态估计与未知参数辨识策略，以更好地服务于主动
+
+段跟踪及后续轨迹预报过程。
+
+2 弹道导弹轨迹预报
+
+轨道解析法计 算速度快，实时性强，但由于忽
+略了大气层内空气阻力对弹道导弹的 作用，该方法
+
+弹道导弹在 自由段与再入段受力相比主动段
+简单（自由段只受重力影响，再入段受气动阻力和
+
+预报精度一般较低。
+2.2 数值积分法
+
+重力影响），传统的轨迹预报方法 大多集中在这两
+个阶段，使用轨道解析法 、数值积分法或函数逼近
+法来推断导弹的未来轨迹。
+2.1 轨道解析法
+
+轨道解析法基 于椭圆弹道理论，认为在地球上
+
+飞行的弹道导弹 会形成一个以地 球中心为焦点的
+椭圆轨道，利用一个或多个初始点的位置、速度信
+息，采用几何方法计 算出导弹轨道 根数，则可以从
+数学上获得弹道导弹的椭圆轨迹，如图 4 所示。LEE
+等研究了一 种基于描述椭圆信息的开普勒模型的
+
+弹道导弹轨迹预测方法，通过求解二体问题推导了
+弹道导弹椭圆轨迹［ 69］；GENG 等提出了一种考虑地
+球扁率项摄动（J2）且包含 J2 短周期项的变椭圆弹道
+导弹轨迹预 测方法，对 传统解析法进行了 改进［ 70］；
+常晓华在弹道导弹 自由段动力学模型的基础上，考
+虑 J2 摄动引力和扰动引力的地球非球形引力摄动
+影响，提出了弹道导弹自由段弹道的近似解析解［71］；
+李晓宇等根据目标导弹关机点状态估计，利用椭圆
+弹道理论进行落点预报研究，通过误差传播矩阵研
+究关机点状态估计对落点预报的影响，借助误差估
+计模型对落点预报误差进行了分析［ 72］；孙瑜等提出
+了一种考虑 J2 摄动并包含短周期项的弹道导弹解
+析预测方法，结合无迹变换构建了弹道预 测的误差
+传播模型，解决了解析法中轨道根数求解过程不可
+微和偏导数矩阵计算困难的问题［ 73］。
+
+图 4 轨道根数
+
+Fig. 4 Orbitalelements
+
+数值积分法考虑各种摄动因素，建立弹道导弹动
+力学方程，利用一定的积分准则从初始点进行数值外
+推计算弹道，其一般框架如图 5 所示。RAVINDRA 等
+
+设计了一种基于 IMM 的滤波器，在量测可用时进行
+弹道导弹状态估计及 类型识别，然后依据最终时刻
+的状态估计使用数值法预测弹着点 ［ 74］；TIAN 等利
+用极大似然法估计 了 导 弹 再 入 段 的 七 维 运动 参
+数，结合再入段目标运动模 型预测未来任意时间的
+导弹位置和弹着点［ 75］；杨焱煜等针对弹道导弹自由
+段定轨和落点预报，提出了一种基于弹道状态 初值
+优化的弹道计算和预测方法［ 76］；代霞等对雷达量测
+值进行 滤波后，再对滤波值进行 二次平滑，取最新
+时刻的点为初始点进行落点外推，以最新几次外推
+落点的平均值作为最终结果［ 77］；方睿等提出了一种
+基于三维空间几何距离准则的弹道外推方法，首先
+由拉格朗日数乘法确定椭圆弹道平面，然后对各量
+测点在椭圆弹道平面的投影点作平滑处理，取中点
+进行弹道数值外 推［ 78］；HARLIN 等提出了一种仅给
+定发射位置和弹着点的情况下预测弹道导弹轨迹
+的方法，提出的迭代解使用状态转移矩阵根据与期
+望的一组最终条件的偏差校正弹道导弹状态 向量
+初始条件［ 79］；陈映等利用 IMM 对弹道系数进行估
+计，建 立了目标 再入时的运动模 型，对该模型进行
+外推得到了精确的落点位置［ 80］；MOON 等应用数据
+驱动的方法，预 测了再入段动力学模型中随时间变
+化的弹道系数，并据此外推当前目标状态计 算弹道
+导弹的未来状态［ 81］；吴楠等根据导弹再入过程中速
+度变化范围估计气动阻力参数范围，将气动阻力参
+
+数建模为随机过程并增广为目标状态，建 立了一个
+考虑气动阻力、地球自转和 J2 扰动的落点预测模
+型，使用数值积分预测落点位置［ 82］。
+
+数值积分法的预报精度 严格受制于动力学方
+程建模精度与初始点估计精度，对 于非合作目标，
+
+状态预报误差会随着预报时间的增加而迅速增大，
+基于不准确的弹道参数 辨识的预报 还会面临模型
+误用的风险，因此，不适合长周期主动段轨迹预报。
+2.3 函数逼近法
+
+函数逼近法基于数据学习的特点，使用多个确
+
+定的函数组合，对弹道或弹道预报偏差进行拟合逼
+近，能够实时快速地对目标弹道进行预测，其一般框
+
+架如图 6 所示。张萍萍等采用多项式模型对导弹飞
+
+图 5 数值积分法的一般框架
+
+Fig. 5 Generalframeworkofnumericalintegrationmethods
+
+行轨迹进行校正和预测，使用最小二乘法进行模 型
+参数估计［ 83］；WANG 等建立了一个包括两层隐藏层
+的深度神经网络直接预测导弹的飞行轨迹［ 84］；LEE
+等训练神经网络学习弹道导弹未来位置与当前时间
+和预测时间间隔的函数关系，通过前馈传播输出预
+测位置［85］；张紫昌等使用多层门控循环单元（GRU）
+网络编码输入数据与输出数据，利用注意力机制提
+取的编码器信息进行解码预测主动段轨迹［ 86］；杨子
+成等提出了一种基于多层感知器神经网络 的在线
+预测方法，用于预测弹道导弹自由段突防中的拦截
+点坐标和拦截时间［ 87］；吉瑞萍等研究了弹道导弹主
+动段长周期轨迹预报问题，提出的解决方案为基于
+
+长短时记忆（LSTM）的深度神经网络，该网络通过连
+续外推目标的当前状态估计序，以实现对未来轨迹的
+递归预测 ［88］；LIU 等设计了两种基于 LSTM 的网络
+用于在线预测再入段导弹位置和速度，其中耦合快
+速跟踪器利用单一网络预测目标导弹的 所有运动
+
+学变量，解耦快速跟踪器利用两个并行模块分别输
+出目标导弹的位置和速度预测［ 89］；宋波涛等针对再
+入段轨迹预测问题，提出了一种基于 LSTM 和一维
+卷积神经网络（1DCNN）的目标轨迹 分类网络对目
+标弹道进行初步分类，然后基于 1DCNN 设计轨迹
+预测网络［ 90］；任乐亮等基于椭圆弹道理论对当前轨
+迹的落点进行预测，求解与真实落点的偏差并对偏
+差量进行解耦处理，提出了一种基于改进二阶优化
+器学习的神经网络落点预测方法［ 91］。由于偏差量相
+对于预测真值小得多，这种以目标状为输 入、以偏
+
+差量为输出的样本，可以大幅降低神经网络 学习难
+度。JI 等利用高斯过程训练了数值积分法的主动段
+轨迹预报误差模型，最终的弹道导弹轨迹预报是基
+
+于动力学模型的数值积分和基于高斯过程的预测
+误差之和［ 92］。由于高斯过程能够输出主动段轨迹预
+报的不确定度信息，这对确定以预测的弹道导弹 位
+置为中心的预警范围这一实际需求具有重要意义。
+函数逼近法中一 个关键步骤是弹道数 据库的
+建立。由于真实的弹道数 据很难获取，可考虑采用
+如下两种方法生成所需的弹道数据：1）以我国可能
+
+面临的导弹 威胁为应用背景，依托高性能计算平
+台，调用数值仿真软件，根据导弹主动段动 力学模
+型及典型弹道参数范围（取自周边国家的导弹及 型
+号） 生成仿真弹道数据；2）鉴于运载火箭与弹道导
+弹发射原理与飞行路径上的相似性，考虑基于各国
+
+运载火箭的发射观测构建可能的弹道导弹轨迹。
+
+总得来说，弹道导弹在主动段受力的复杂性使
+得主动段轨迹不能用椭圆弹道近似。基于动力学模
+型积分外推的主动段轨迹预报方法，会因估计误差
+与建模误差的累积传播迅速发散。函数逼近法原则
+
+上可用于弹道导弹主动段轨迹预报，但需要根据主
+动段轨迹数据特征选择合适的逼近函数空间，以实
+现预报精度和计算复杂度之间的折衷。
+
+3 结论
+
+弹道导弹目标主动段跟踪与预报是主动防御
+
+系统中不可缺少的一环。本文分两部分综述了当前
+
+公开的国内外弹道导弹主动段跟踪与轨迹预报方
+法。通过以上梳理可以看出，弹道导弹主动段跟踪
+中的模型设计及估计器设计都较为成熟，但关于主
+动段模 型未知参数辨识这一问题还有待继续深入
+研究；弹道导弹主动段轨迹预报在国内尚处于起步
+
+研究阶段，国外几乎未见公开报道，这体现了主动
+
+图 6 函数逼近法的一般框架
+
+Fig. 6 Generalframeworkoffunctionapproximationmethods
+
+段轨迹预报理论研究上的空白，亦可窥见国外对其
+技术封锁性。结合国内外弹道导弹目标主动段跟踪
+
+与预报技术的研究现状，从以下几个方面对该领域
+发展方向进行展望：
+
+1）运动建模与轨迹预报的集成。弹道导弹主动
+段跟踪与预报均需依赖高精度的运动建模，拟建立
+的主动段运动模 型应既能适用于主动段运动状态
+
+估计，也能适用于主动段长时轨迹预报。
+
+2）先验约束的利用。弹道导弹在主动段运动能
+力、任务要求、环境限制等层面存在着广泛的约束
+知识，引入反映弹道导弹目标的参数 约束、流程关
+系等约束，可进一步提升主动段状态估计精度。
+
+3）数据和模型的综合。弹道导弹动力学模型与
+历史弹道数据在主动段跟踪，尤其是长周期轨迹预
+报方面，均蕴含着巨大潜力，如何对二者进行有效
+融合，是一个很有价值的研究方向。
+
+4）多装备的协同探测、交接融合。弹道导弹主
+
+动段预警探测涉及到多星协同探测及卫星与雷达
+的交接探测，应探索传感器调度、同质 / 异质传感器
+融合等策略在提升主动段跟踪与预报 性能方面的
+可行性。
+
+参考文献：
+
+156，177.
+
+LID X ，ZHANG Q，LIX X ，etal.Analysisoftheopera-
+
+tionalcharacteristicsofanti-TBMbasedonairborneplat-
+
+formatboost-phase ［J］.JournalofChinaAcademyofElec-
+
+tronicsandInformationTechnology ，2016 ，11（2）：151-
+
+156，177.
+
+［6］ KUBYSHKINA V ，BELOKONI N ，KARAGODIN VV.
+
+Boostphaseinterceptofballisticmissiles ［J］.Mechanicsof
+
+Solids，2022，57（7）：1666-1671.
+
+［7］ 刘永兰，李为民，谢鑫，等. 国外助推段反导的研究现状
+
+及发展趋势分析［J］. 飞航导弹，2014，44（3）：34-41.
+
+LIU Y L，LIW M ，XIE X，etal.Analysisofthecurrentre-
+
+searchstatusanddevelopmenttrendsofanti-missile
+
+propulsioninforeigncountries ［J］.AerospaceTechnology ，
+
+2014，44（3）：34-41.
+
+［8］ 荆武兴，杨彪，高长生. 空基反助推段导弹制导技术综
+
+述［J］. 哈尔滨工业大学学报，2021，53（6）：1-12.
+
+JING W X，YANG B，GAOCS.Reviewonguidancetech-
+
+nologyofair-basedmissilesforboostphaseinterception
+
+［J］.JournalofHarbinInstituteofTechnology
+
+，2021，53
+
+（6）：1-12.
+
+［9］ 曹莉，周亮，耿斌斌，等. 空基助推段反导拦截能力需求
+
+与仿真分析［J］. 空天防御，2020，3（1）：87-92.
+
+CAO L，ZHOU L，GENGB B ，etal.Requirementandsim-
+
+ulationanalysisofanti-TBMinboost-phasebasedonair-
+
+borneplatform［J］.Air&SpaceDefense ，2020，3（1）：87-
+
+［1］ 储雪峰. 天基红外系统探测导弹助推段弹道估计 算法
+
+92.
+
+研究［D］. 郑州：战略支援部队信息工程大学，2020.
+
+CHUXF.Researchonboostphasetrajectoryestimation
+
+algorithmforthespacebasedinfraredsystemdetection ［D］.
+
+Zhengzhou：PLAStrategicSupportForceInformationEngi-
+
+neeringUniversity ，2020.
+
+［10］ 罗曦. 美国导弹防御助推段拦截技术及其战略影响［J］.
+
+中国国际战略评论，2019，12（1）：204-221.
+
+LUOX.Theinterceptiontechnologyandstrategicimpactof
+
+theUSboostphasemissiledefense ［J］.ChinaInternational
+
+StrategyReview ，2019，12（1）：204-221.
+
+［2］ 张文涛，苏琪雅，于沐尧. 国外防空反导系统现状与未
+
+［11］ 董敏周，赵斌，陈凯. 空基助推段反导作战总体方案研
+
+来发展趋势［J］. 国防科技工业，2023，32（1）：41-43.
+
+ZHANGW T ，SUY Q ，YUMY.Currentstatusandfuture
+
+developmenttrendsofforeignairdefenseandanti-missile
+
+究［J］. 指挥控制与仿真，2018，40（2）：38-42.
+
+DONGM Z ，ZHAO B，CHENK.Designofairborneboost-
+
+phaseATBMweaponsystem ［J］.CommandControl&Sim-
+
+systems［J］.DefenceScience&TechnologyIndustry ，2023，
+
+ulation，2018，40（2）：38-42.
+
+32（1）：41-43.
+
+［12］ 张耀，王菁华，田源，等. 美国天基助推段拦截系统发展
+
+［3］ 张锐. 美军弹道导弹助推拦截系统浅析［J］. 舰船电子工
+
+程，2017，37（7）：22-24.
+
+ZHANGR.Abriefanalysisonanti-ballisticmissileinter-
+
+计划分析研究［J］. 飞航导弹，2018，48（5）：38-41.
+
+ZHANG Y，WANGJ H ，TIAN Y，etal.Analysisandre-
+
+searchonthedevelopmentplanofspace-basedpropulsion
+
+ceptionsysteminboostphaseofAmericanmilitary ［J］.Ship
+
+interceptionsystemsintheUnitedStates ［J］.Aerodynamic
+
+ElectronicEngineering ，2017，37（7）：22-24.
+
+MissileJournal ，2018，48（5）：38-41.
+
+［4］ 李大喜，杨建军，孙鹏，等. 空基反导作战需求分析及概
+
+［13］ NationalResearchCouncil.Makingsenseofballisticmissile
+
+念研究［J］. 现代防御技术，2015，43（2）：17-23，46.
+
+defense：anassessmentofconceptsandsystemsforUS
+
+LID X ，YANGJ J ，SUN P，etal.Operationalrequirement
+
+boost-phasemissiledefenseincomparisontootheralterna-
+
+analysisandconceptualstudyofairborneantimissile
+
+［J］.
+
+tives［M］.NationalAcademiesPress ，2012.
+
+ModernDefenceTechnology ，2015，43（2）：17-23，46.
+
+［14］ 刘丙杰，胡玉颖，葛幸. 美国弹道导弹防御系统 2.0 解析
+
+［5］ 李大喜，张强，李小喜，等. 空基助推段反 TBM 作战特
+
+［J］. 飞航导弹，2021，51（10）：25-29.
+
+点分析［J］. 中国电子科学研究院学报，2016，11（2）：151-
+
+LIU B J，HUY Y ，GEX.AnalysisoftheUSballisticmissile
+
+defensesystem2.0 ［J］.AerodynamicMissileJournal ，2021，
+
+tionmethodbasedonsinglestationonlyanglemeasurement
+
+51（10）：25-29.
+
+［J］.AerospaceElectronicWarfare ，2012，28（5）：44-46.
+
+［15］ 王欣欣.2022 年国外防空反导发展回顾［J］. 中国航天，
+
+［24］ 张涛，安玮，周一宇，等. 基于推力加速度模板的主动段
+
+2023，46（2）：38-43.
+
+弹道跟踪方法［J］. 宇航学报，2006，（3）：385-389.
+
+WANGXX.Reviewofthedevelopmentofairdefenseand
+
+ZHANG T，AN W，ZHOU Y Y，etal.Thetrajectorytracking
+
+missiledefenseabroadin2022
+
+［J］.AerospaceChina ，
+
+methodinboostphaseusingthrustaccelerationprofile
+
+［J］.
+
+2023，46（2）：38-43.
+
+JournalofAstronautics ，2006，（3）：385-389.
+
+［16］ 赵炜，黄树彩，于强，等. 弹道导弹主动段 天基红外跟踪
+
+［25］ 张峰，田康生. 预警卫星对弹道导弹主动段状态估计 算
+
+方法综述［J］. 飞航导弹，2014，44（7）：82-87.
+
+法［J］. 红外与激光工程，2013，42（7）：1912-1922.
+
+ZHAO W，HUANG S C，YU Q，etal.Overviewofspace-
+
+ZHANG F，TIAN KS.Estimationalgorithmofboost-phase
+
+basedinfraredtrackingmethodsforactivephaseofballistic
+
+ballisticmissilestatefromsatelliteobservations ［J］.Infrared
+
+missiles［J］.AerodynamicMissileJournal ，2014，44（7）：82-
+
+andLaserEngineering ，2013，42（7）：1912-1922.
+
+87.
+
+［26］ 黄源. 弹道模板的构建与匹配技术研究［D］. 长沙：国防
+
+［17］ 赵蒙，王明宇，王健，等. 基于运动方程的弹道导弹建模
+
+科学技术大学，2015.
+
+仿真方法［J］. 兵器装备工程学报，2022，43（12）：118-124.
+
+HUANGY.Researchofestablishingandmatchingofbal-
+
+ZHAO M，WANGM Y ，WANG J，etal.Modelingandsim-
+
+listictemplate［D］.Changsha ：NationalUniversityofDefense
+
+ulationofballisticmissilesbasedonmotionequation
+
+［J］.
+
+Technology，2015.
+
+JournalofOrdnanceEquipmentEngineering ，2022，43（12）：
+
+［27］ 陈映，文树梁，程臻. 一种适用于助推段弹道导弹的跟
+
+118-124.
+
+踪方法研究［J］. 系统仿真学报，2012，24（5）：1063-1067.
+
+［18］ 杨锐. 单星观测下弹道导弹主动段参数估计 技术研究
+
+CHEN Y，WEN S L，CHENGZ.Methodfortrackingballis-
+
+［D］. 南京：南京航空航天大学，2020.
+
+ticmissileonboostphase ［J］.JournalofSystemSimulation ，
+
+YANGR.Researchonparameterestimationtechnologyof
+
+2012，24（5）：1063-1067.
+
+ballisticmissileboostphaseundersinglestarobservation
+
+［28］ WU N，CHEN L，LEI Y，etal.Adaptiveestimationalgo-
+
+［D］.Nanjing ：NanjingUniversityofAeronauticsandAs-
+
+rithmofboost-phasetrajectoryusingbinaryasynchronous
+
+tronautics，2020.
+
+observation［J］.ProceedingsoftheInstitutionofMechanical
+
+［19］ 李晓宇，田康生，郑玉军，等. 单星观测下弹道导弹状态
+
+Engineers，Part G：JournalofAerospaceEngineering ，2016，
+
+估计与预测误差分析［J］. 火力与指挥控制，2015，40（8）：
+
+230（14）：2661-2672.
+
+5-8.
+
+［29］ 邱明劼，周垂红，汪圣利. 双层三阶多项式拟合的弹道
+
+LIX Y ，TIANK S ，ZHENGY J ，etal.Erroranalysisofsin-
+
+导弹发射点估计方法［J］. 电讯技术，2024，64（2）：239-246.
+
+glesatelliteobserveballisticmissilestateestimationand
+
+QIUM J ，ZHOU C H，WANGSL.Aballisticmissile
+
+forecast［J］.FireControl&CommandControl ，2015，40（8）：
+
+launchpointestimationmethodbasedondoublelayer
+
+5-8.
+
+third-orderpolynomialfitting［J］.TelecommunicationEngi-
+
+［20］ 李英良，易东云，吴翊. 单星观测弹道估计的一 种新方
+
+neering，2024，64（2）：239-246.
+
+法［J］. 弹道学报，2003，15（3）：38-44.
+
+［30］ ZHANG X，LEIH M ，LI J，etal.Ballisticmissiletrajectory
+
+LIY L ，YID Y ，WUY.Anewmethodofestimatingtrajec-
+
+predictionandthesolutionalgorithmsforimpactpointpre-
+
+torymeasuredbyasinglesatellite ［J］.JournalofBallistics ，
+
+diction［C］//Proceedingsof2014IEEEChineseGuidance ，
+
+2003，15（3）：38-44.
+
+NavigationandControlConference.IEEE ，2014：879-883.
+
+［21］ 王雪锋，程洪玮，安玮，等. 基于模板弹道估计算法的一
+
+［31］ 储雪峰，吴楠，王锋，等. 一种简化 CS-CKF 的助推段弹
+
+种修正［J］. 战术导弹控制技术，2005（2）：40-43.
+
+道估计方法［J］. 指挥控制与仿真，2020，42（3）：113-117.
+
+WANG X F，CHENG H W，AN W，etal.Amodification
+
+CHUX F ，WU N，WANG F，etal.AsimplifiedCS-CKF
+
+basedontemplatetrajectoryestimationalgorithm ［J］.Tacti-
+
+algorithmontrajectoryestimationinboostphase ［J］.Com-
+
+calMissileControlTechnology ，2005（2）：40-43.
+
+mandControl ＆ Simulation，2020，42（3）：113-117.
+
+［22］ 申镇，强胜，易东云. 单星探测弹道特征信息提取方法
+
+［32］ 梁小虎，朱武宣，郭军海，等. 多级弹道目标主动段机动
+
+研究［J］. 系统仿真学报，2010，22（2）：295-297，356.
+
+检测自适应跟踪算法［J］. 北京航空航天大学学报，2013，
+
+SHEN Z，QIANG S，YIDY.Researchonestimatingmissile
+
+39（12）：1682-1686.
+
+trajectorycharacteristicbasedonsinglesatellite ［J］.Journal
+
+LIANG X H，ZHUW X ，GUO J H，etal.Adaptivetracking
+
+ofSystemSimulation ，2010，22（2）：295-297，356.
+
+algorithmbasedonmaneuverdetectionformulti-stagebal-
+
+［23］ 武立华，盛卫东，安玮. 一种基于单站仅测角观测的弹
+
+listictargetboostphase ［J］.JournalofBeijingUniversityof
+
+道射向估计算法［J］. 航天电子对抗，2012，28（5）：44-46.
+
+AeronauticsandAstronautics ，2013，39（12）：1682-1686.
+
+WUL H ，SHENGW D ，ANW.Aballisticheadingestima-
+
+［33］ 崔彦凯，梁晓庚，贾晓洪，等. 弹道导弹助推段拦截融合
+
+跟踪算法研究［J］. 飞行力学，2011，29（5）：66-68，80.
+
+ballisticmissileusinganextendedintervalKalmanfilter
+
+CUIY K ，LIANG X G，JIAX H ，etal.Studyonfusion
+
+［J］.IEEETransactionsonAerospaceandElectronicSys-
+
+trackingalgorithmofballisticmissileinterceptionduringthe
+
+tems，1997，33（1）：232-240.
+
+boostphase［J］.FlightDynamics ，2011，29（5）：66-68，80.
+
+［43］ 谢鑫，李为民，周晓光，等. 基于 EKF 算法的弹道导弹助
+
+［34］ 张峰，田康生. 弹道导弹主动段样条滤波算法［J］. 导弹
+
+推段跟踪建模与仿真［J］. 现代防御技术，2011，39（5）：
+
+与航天运载技术，2012，（1）：53-57，61.
+
+146-151.
+
+ZHANG F，TIAN KS.Studyonthesplinefilteralgorithmin
+
+XIE X，LIW M ，ZHOUX G ，etal.Modelingandsimulation
+
+ballisticmissileboost-phase ［J］.MissilesandSpaceVehi-
+
+oftheballisticmissileboostphasetrackingbasedonEKF
+
+cles，2012，（1）：53-57，61.
+
+［J］.ModernDefenceTechnology ，2011，39（5）：146-151.
+
+［35］ 张涛，樊士伟，薛永宏，等. 基于最优样条节点的导弹主
+
+［44］ TANG Y，HUANGP.Boost-phaseballisticmissiletrajec-
+
+动段弹道估计方法［J］. 航空学报，2015，36（9）：3027-
+
+toryestimationwithgroundbasedradar ［J］.JournalofSys-
+
+3033.
+
+temsEngineeringandElectronics ，2006，17（4）：705-708.
+
+ZHANG T，FAN S W，XUE Y H，etal.Trajectoryestima-
+
+［45］ 韦道知，肖军. 基于 BPGM-SME 和改进 UKF 的双星多
+
+tionmethodofmissileinboostphaseusingoptimalknots
+
+目标跟踪算法［J］. 红外与激光工程，2017，46（B12）：96-
+
+spline［J］.ActaAeronauticaetAstronauticaSinica ，2015，
+
+103.
+
+36（9）：3027-3033.
+
+WEID Z ，XIAOJ.Doublesatellitemulti-targettracking
+
+［36］ 吴楠，孟凡坤，周致远. 基于样条拟合和双向滤波的助
+
+algorithmbasedonBPGM-SMEandimprovedUKF
+
+［J］.
+
+推段弹道估计［J］. 飞行器测控学报，2014，33（5）：392-
+
+InfraredandLaserEngineering ，2017，46（B12）：96-103.
+
+398.
+
+［46］ 潘晓刚，刘靖. 基于 DSP 导弹预警系统的导弹弹道确定
+
+WU N，MENGF K ，ZHOUZY.Trajectoryestimationin
+
+及落点预报精度 分析［J］. 红外与激光工程，2015，44
+
+boostphasebasedonsplinefittingandbidirectionalfilter-
+
+（S1）：147-151.
+
+ing［J］.JournalofSpacecraftTT&CTechnology ，2014，33
+
+PANX G ，LIUJ.Impact-pointprecisionanalysisofDSP
+
+（5）：392-398.
+
+ballisticmissileearlywarningsystem ［J］.InfraredandLaser
+
+［37］ LIX R ，JILKOVVP.Surveyofmaneuveringtargettrack-
+
+Engineering，2015，44（S1）：147-151.
+
+ing.PartII ：Motionmodelsofballisticandspacetargets ［J］.
+
+［47］ 张学润，王中东，何珂，等. 基于 UKF 的主动段弹道跟
+
+IEEETransactionsonAerospaceandElectronicSystems
+
+，
+
+踪算法［J］. 火力与指挥控制，2011，36（3）：95-97.
+
+2010，46（1）：96-119.
+
+ZHANG X R，WANGZ D ，HE K，etal.Trajectorytracking
+
+［38］ YI T，SHEN Z，WANG Z，etal.Profile-basedmaximum
+
+inboostphasebasedonunscentedKalmanfilter
+
+［J］.Fire
+
+penalisedlikelihoodtrajectoryestimationfromspace-borne
+
+Control ＆CommandControl ，2011，36（3）：95-97.
+
+LOSmeasurements［J］.DefenceScienceJournal ，2016，66
+
+［48］ 许登荣，程水英，包守亮.ECEF 坐标系弹道导弹跟踪研
+
+（3）：278-286.
+
+究［J］. 现代雷达，2016，38（11）：53-60.
+
+［39］ 储雪峰，吴楠，王锋，等. 基于不完备推力加速度模板的
+
+XUD R ，CHENGS Y ，BAOSL.Astudyonballisticmis-
+
+主动段弹道估计［J］. 信息工程大学学报，2019，20（4）：
+
+siletrackinginECEFcoordinatesystem ［J］.ModernRadar ，
+
+507-512.
+
+2016，38（11）：53-60.
+
+CHUX F ，WU N，WANG F，etal.Trajectoryestimationin
+
+［49］ WANG X，QIN W，BAI Y，etal.Trajectoryestimationfor
+
+boostphasebasedonincompletethrustaccelerationprofile
+
+ballisticmissileinbooststageusingrobustfiltering ［J］.IET
+
+［J］.JournalofInformationEngineeringUniversity ，2019，20
+
+Radar，SonarandNavigation ，2017，11（3）：513-519.
+
+（4）：507-512.
+
+［50］ 张龙. 弹道导弹高 阶容积卡尔曼滤波弹道跟踪方法研
+
+［40］ YI T，LIU B，WANG Z，etal.Boost-phasetrajectoryinfer-
+
+究［D］. 哈尔滨：哈尔滨工业大学，2017.
+
+encefromspace-borneLOSmeasurementswithasieve
+
+ZHANGL.Researchofballisticmissiletrajectorytracking
+
+method［J］.IEEETransactionsonAerospaceandElectron-
+
+withhigh-degreecubatureKalmanfilter ［D］.Harbin ：Harbin
+
+icSystems ，2018，54（1）：339-352.
+
+InstituteofTechnology ，2017.
+
+［41］ 张雪松，吴楠，王锋，等. 基于动力特征模板的无源探测
+
+［51］ 黄小睿. 天基预警低轨卫星星座设计与助推段弹道跟
+
+主动段弹道估计［J］. 指挥控制与仿真，2023，45（5）：73-
+
+踪方法［D］. 哈尔滨：哈尔滨工业大学，2022.
+
+83.
+
+HUANGXR.Space-basedinfraredLEOsatelliteconstel-
+
+ZHANG X S，WU N，WANG F，etal.Trajectoryestimation
+
+lationdesignandboostphasetrajectorytrackingmethod
+
+inboostphaseofpassivedetectionbasedondynamicchar-
+
+［D］.Harbin ：HarbinInstituteofTechnology ，2022.
+
+acteristictemplate ［J］.CommandControl ＆ Simulation，
+
+［52］ YU M，GONG L，OH H，etal.Multiplemodelballisticmis-
+
+2023，45（5）：73-83.
+
+siletrackingwithstate-dependenttransitionsandGaussian
+
+［42］ SIOURIS G M，CHEN G，WANGJ.Trackinganincoming
+
+particlefiltering［J］.IEEETransactionsonAerospaceand
+
+ElectronicSystems ，2017，54（3）：1066-1081.
+
+LIUL L ，MU R J，CUING.Astate/parameterjointestima-
+
+［53］ YU M，CHENW H ，CHAMBERSJ.Statedependentmulti-
+
+tionalgorithmforactivesegmentofmulti-stageballistic
+
+plemodel-basedparticlefilteringforballisticmissiletrack-
+
+missile ［J］.JournalofAstronautics ，2023，44（12）：1839-
+
+inginalow-observableenvironment ［J］.AerospaceSci-
+
+1849.
+
+enceandTechnology ，2017，67：144-154.
+
+［65］ 赵砚，张寅生，张倩，等. 基于 IMM-UKF 方法的主动段
+
+［54］ BRUNO MG S ，PAVLOVA.ImprovedsequentialMonte
+
+目 标 分 级 与 关 机 识 别 ［J］. 系 统 工 程 与 电 子 技 术 ，
+
+Carlofilteringforballistictargettracking ［J］.IEEETrans-
+
+2010，32（10）：2181-2185.
+
+actionsonAerospaceandElectronicSystems ，2005，41（3）：
+
+ZHAO Y，ZHANG Y S，ZHANG Q，etal.Identificationof
+
+1103-1108.
+
+［55］ KIM J，TANDALE M，MENONP K ，etal.Particlefilterfor
+
+ballistictargettrackingwithglintnoise ［J］.JournalofGuid-
+
+ance，Control，andDynamics ，2010，33（6）：1918-1921.
+
+［56］ 孙雷，李冬，易东云. 基于迭代 UKF 的主动段弹道跟踪
+
+算法研究［J］. 计算机工程与科学，2014，36（1）：121-125.
+
+SUN L，LI D，YIDY.Researchonthetrajectorytrackingin
+
+boostphasebasedoniteratedunscentedKalmanfilter
+
+［J］.
+
+ComputerEngineering&Science ，2014，36（1）：121-125.
+
+［57］ 薛高茹，梁彦，谯平，等. 基于 EM 的主动段弹道导弹跟
+
+踪算法研究［J］. 电子学报，2017，45（7）：1770-1774.
+
+XUE G R，LIANG Y，QIAO P，etal.Researchon
+
+boost-phaseballisticmissiletrackingalgorithmusingEM
+
+［J］.ActaElectronicaSinica ，2017，45（7）：1770-1774.
+
+［58］ MENEGAZHM T ，BATTISTINIS.Switchingmultiple
+
+modelfilterforboost-phasemissiletracking ［J］.IEEETrans-
+
+actionsonAerospaceandElectronicSystems ，2018，54（5）：
+
+2547-2553.
+
+［59］ WANG X，QIN W，CUI N，etal.Robusthigh-degreecuba-
+
+tureinformationfilteranditsapplicationtotrajectoryesti-
+
+mationforballisticmissile ［J］.ProceedingsoftheInstitution
+
+ofMechanicalEngineers ，Part G：JournalofAerospaceEn-
+
+gineering，2018，232（12）：2364-2377.
+
+［60］ WU L，SHENG W，ANW.Atrajectorytrackingalgorithm
+
+inboostphasebasedonMLE-CKFfederatedfilter
+
+［J］.
+
+JournalofComputationalandTheoreticalNanoscience
+
+，
+
+2016，13（5）：3036-3042.
+
+［61］ KIM D，HAN Y，LEE H，etal.Acceleratedparticlefilter
+
+withGPUforreal-timeballistictargettracking ［J］.IEEE
+
+Access，2023，11：12139-12149.
+
+［62］ KIM J，VADDIS S ，MENONP K ，etal.Comparisonbe-
+
+tweennonlinearfilteringtechniquesforspiralingballistic
+
+missilestateestimation［J］.IEEETransactionsonAerospace
+
+andElectronicSystems ，2012，48（1）：313-328.
+
+［63］ 许登荣，程水英，包守亮. 一种多级助推段弹道导弹跟
+
+踪算法［J］. 宇航学报，2016，37（9）：1114-1121.
+
+XU D R，CHENGS Y ，BAOSL.Atrackingalgorithmof
+
+ballisticmissilewithmulti-stageboosters ［J］.Journalof
+
+Astronautics，2016，37（9）：1114-1121.
+
+stagingandburnoutfortheboostphaseobjectbasedonthe
+
+IMM-UKFmethod［J］.SystemsEngineeringandElectron-
+
+ics，2010，32（10）：2181-2185.
+
+［66］ 钮俊清，任清安. 主动段弹道跟踪与关 机点估计算法研
+
+究［J］. 雷达科学与技术，2016，14（3）：267-272.
+
+NIUJ Q ，REN QA.Analgorithmfortrackingballistictar-
+
+getinboostphaseandestimatingburnouttime
+
+［J］.Radar
+
+ScienceandTechnology ，2016，14（3）：267-272.
+
+［67］ 蔡莉，李浩，孟庆文. 一种基于贝叶斯估计的弹道导弹
+
+主动段融合算法［J］. 空军预警学院学报，2019，33（1）：
+
+54-57.
+
+CAI L，LI H，MENGQW.Afusionalgorithmforballistic
+
+missileboostphasebasedonBayesestimation ［J］.Journalof
+
+AirForceEarlyWarningAcademy ，2019，33（1）：54-57.
+
+［68］ 张峰，田康生. 基于多假设跟踪弹道导弹主动段跟踪 算
+
+法［J］. 现代防御技术，2013，41（3）：124-130，132，143.
+
+ZHANG F，TIAN KS.Boost-phaseballisticmissiletrack-
+
+ingalgorithmusingMHT ［J］.ModernDefenceTechnology ，
+
+2013，41（3）：124-130，132，143.
+
+［69］ LEE D G，CHO K S，SHINJH.Asimplepredictionmethod
+
+ofballisticmissiletrajectorytodesignatesearchdirection
+
+anditsverificationusingatestbench ［C］//201510thAsian
+
+ControlConference （ASCC）.IEEE ，2015：1-7.
+
+［70］ GENG L，WU N，MENG F，etal.Ananalyticalmethodof
+
+trajectorypredictionconsideringJ2perturbationsandin-
+
+cludingshort-periodterms［C］//20184thInternationalCon-
+
+ferenceonControl ，AutomationandRobotics （ICCAR）.
+
+IEEE，2018：498-503.
+
+［71］ 常晓华. 考虑地球非球形引力摄动影响的自由段弹道
+
+解析解［J］. 国防科技大学学报，2018，40（4）：80-86.
+
+CHANGXH.Analyticalsolutionforfreeflighttrajectory
+
+consideringearthnon-sphericalgravitationperturbation
+
+［J］.JournalofNationalUniversityofDefense
+
+，2018，40
+
+（4）：80-86.
+
+［72］ 李晓宇，田康生，郑玉军，等. 基于关机点状态的弹道导
+
+弹落点估计及误差分析［J］. 舰船电子对抗，2014，37（5）：
+
+71-74.
+
+LI X Y，TIANK S ，ZHENGY J ，etal.Estimationanderror
+
+analysisofballisticmissilefallpointbasedonshutoffpoint
+
+state［J］.ShipboardElectronicCountermeasure ，2014，37
+
+［64］ 刘丽丽，穆荣军，崔乃刚. 一种多级弹道导弹主动段状
+
+（5）：71-74.
+
+态 / 参数联合估计算法［J］. 宇航学报，2023，44（12）：
+
+［73］ 孙瑜，吴楠，孟凡坤 ，等. 考虑 J2 摄动的弹道导弹高精
+
+1839-1849.
+
+度弹道预报和误差传播分析［J］. 弹道学报，2016，28（2）：
+
+18-24.
+
+ZHANGP P ，SUN Y K，LINZ X ，etal.Methodofflighttra-
+
+SUN Y，WU N，MENG F K，etal.Analysisonhighpreci-
+
+jectorypredictionofamissilebasedonthepolynomialpre-
+
+siontrajectorypredictionanderrorpropagationofballistic
+
+diction［J］.TacticalMissileTechnology ，2013，34（2）：35-
+
+missileconsideringJ2perturbation ［J］.JournalofBallis-
+
+37，55.
+
+tics，2016，28（2）：18-24.
+
+［84］ WANG Z，ZHANG J，WEIW.Deeplearningbasedmissile
+
+［74］ RAVINDRAV C ，BAR-SHALOM Y，WILLETTP.Projec-
+
+trajectoryprediction［C］//20203rdInternationalConference
+
+tileidentificationandimpactpointprediction ［J］.IEEETr-
+
+onUnmannedSystems （ICUS）.IEEE ，2020：474-478.
+
+ansactionsonAerospaceandElectronicSystems ，2010，46
+
+［85］ LEEJ Y ，JOB U ，MOON G H，etal.Interceptpointpredic-
+
+（4）：2004-2021.
+
+tionofballisticmissiledefenseusingneuralnetworklearn-
+
+［75］ TIAN Z，YANG K，DANINO M，etal.Ballisticobjecttra-
+
+ing［J］.InternationalJournalofAeronauticalandSpace
+
+jectoryandimpactpointestimationinthereentryphase
+
+Sciences，2020：1-13.
+
+fromamovingpassivesensor ［J］.IEEETransactionsonAe-
+
+［86］ 张紫昌，蔡远利，方艺忠. 基于注意力的 Seq2Seq 的弹
+
+rospaceandElectronicSystems ，2022，58（5）：4540-4550.
+
+道导弹主动段轨迹预报模 型［C］// 第 40 届中国控制会
+
+［76］ 杨焱煜，蔡爱华，陆泽健，等. 基于初状态优化的弹道导
+
+议论文集（15），2021：553-558.
+
+弹自由段定轨和预测方法［J］. 现代雷达，2019，41（9）：
+
+ZHANGZ C ，CAIY L ，FANG YZ.Attention-based
+
+49-54.
+
+Seq2Seqtrajectorypredictionmodelforballisticmissilein
+
+YANGY Y ，CAIA H ，LUZ J ，etal.Ballisticmissileorbit
+
+boostphase［C］//Proceedingsofthe40thChineseControlCo-
+
+determinationandpredictionapproachinfree-flightphase
+
+nference.Shanghai ：Xi’anJiaotongUniversity ，2021：553-
+
+basedoninitialconditionoptimization ［J］.ModernRadar ，
+
+558.
+
+2019，41（9）：49-54.
+
+［87］ 杨子成，鲜勇，李少朋，等. 基于学习的中段反导拦截时
+
+［77］ 代霞，方睿，靳俊峰，等. 基于平滑优化的弹道导弹落点
+
+间和拦截点预测方法［J］. 北 京 航空 航 天大学 学 报，
+
+外推方法［J］. 舰船电子对抗，2022，45（5）：68-72.
+
+2021，47（11）：2360-2368.
+
+DAI X，FANG R，JIN J F，etal.Extrapolationmethodof
+
+YANGZ C ，XIAN Y，LIS P ，etal.Predictionmethodofin-
+
+ballisticmissileimpactpointbasedonsmoothingoptimiza-
+
+tercepttimeandinterceptpointbasedonlearningmid-
+
+tion［J］.ShipboardElectronicCountermeasure ，2022，45
+
+courseantimissile［J］.JournalofBeijingUniversityofAero-
+
+（5）：68-72.
+
+nauticsandAstronautics ，2021，47（11）：2360-2368.
+
+［78］ 方睿，代霞，靳俊峰. 基于几何距离准则的弹道外 推方
+
+［88］ 吉瑞萍，张程祎，梁彦，等. 基于 LSTM 的弹道导弹主动
+
+法［J］. 雷达科学与技术，2019，17（1）：8-12.
+
+段轨迹预报［J］. 系统工程与电子技术，2022，44（6）：1968-
+
+FANG R，DAI X，JINJF.Trajectoryextrapolationmethod
+
+1976.
+
+basedoncriterionofgeometricdistance ［J］.RadarScience
+
+JIR P ，ZHANG C Y，LIANG Y，etal.Trajectoryprediction
+
+andTechnology ，2019，17（1）：8-12.
+
+ofboost-phaseballisticmissilebasedonLSTM ［J］.Systems
+
+［79］ HARLINW J ，CICCIDA.Ballisticmissiletrajectorypre-
+
+EngineeringandElectronics ，2022，44（6）：1968-1976.
+
+dictionusingastatetransitionmatrix ［J］.AppliedMathe-
+
+［89］ LUID G ，TARTAGLIONE G，CONTI F，etal.Longshort-
+
+maticsandComputation ，2007，188（2）：1832-1847.
+
+termmemory-basedneuralnetworksformissilemaneuvers
+
+［80］ 陈映，文树梁，程臻. 一种基于多模型算法的纯弹道式弹
+
+trajectoriesprediction［J］.IEEEAccess ，2023，11：30819-
+
+道落点预报方法［J］. 宇航学报，2010，31（7）：1825-1831.
+
+30831.
+
+CHEN Y，WENS L ，CHENGZ.AnIMM-basedimpact
+
+［90］ 宋波涛，许广亮. 基于 LSTM 与 1DCNN 的导弹轨迹预测
+
+pointpredictionmethodofballistictarget ［J］.Journalof
+
+方法［J］. 系统工程与电子技术，2023，45（2）：504-512.
+
+Astronautics，2010，31（7）：1825-1831.
+
+SONGB T ，XUGL.Missiletrajectorypredictionmeth-od
+
+［81］ MOONI C ，SONG K，KIMS H ，etal.Statepredictionof
+
+basedonLSTMand1DCNN ［J］.SystemsEngineeringand
+
+high-speedballisticvehicleswithGaussianprocess
+
+［J］.
+
+Electronics，2023，45（2）：504-512.
+
+InternationalJournalofControl ，AutomationandSystems ，
+
+［91］ 任乐亮，鲜勇，李少朋，等. 基于改进二阶优化器并行学
+
+2018，16：1282-1292.
+
+习的弹道导弹 神经网络 落点预测方法［J］. 航空学报，
+
+［82］ 吴楠，王锋，孟凡坤. 无再入观测弹道导弹气动参数和
+
+2023，44（14）：232-250.
+
+落点联合预报［J］. 弹道学报，2018，30（3）：18-24.
+
+RENL L ，XIAN Y，LIS P ，etal.Aneuralnetworkmodel
+
+WU N，WANG F，MENGFK.Jointpredictionofaerody-
+
+forimpactpointpredictionofballisticmissilebasedonim-
+
+namicparametersandimpactpointofballisticmissilewith-
+
+provedsecond-orderoptimizerwithparallellearning
+
+［J］.
+
+outreentryobservation ［J］.JournalofBallistics ，2018，30
+
+ActaAeronauticaetAstronauticaSinica
+
+，2023，44（14）：
+
+（3）：18-24.
+
+232-250.
+
+［83］ 张萍萍，孙永侃，林宗祥，等. 基于多项式预测的导弹飞
+
+［92］ JI R，LIANG Y，XU L，etal.Trajectorypredictionofballis-
+
+行轨迹预测方法［J］. 战术导弹技术，2013，34（2）：35-37，
+
+ticmissilesusingGaussianprocesserrormodel ［J］.Chinese
+
+55.
+
+JournalofAeronautics ，2022，35（1）：458-469.
+

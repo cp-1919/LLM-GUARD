@@ -1,0 +1,1 @@
+{"language": "", "chat_model": "deepseek-reasoner", "chat_base_url": "https://api.deepseek.com", "chat_api_key": "sk-08ca9574ac5746f586e6a3b19911c965", "local_model": "", "online_model": "deepseek-reasoner", "online_base_url": "https://api.deepseek.com", "api_key": "sk-08ca9574ac5746f586e6a3b19911c965", "thread_number": "5", "chunk_size": "1500"}

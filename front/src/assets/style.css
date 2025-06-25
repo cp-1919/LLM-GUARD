@@ -1,0 +1,87 @@
+body {
+    overflow: hidden;
+}
+
+#app {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+      /* 必须设置固定尺寸或最大尺寸 */
+    height: 100%; /* 或 max-height: 50vh */
+    width: 100%; /* 或 max-width: 100% */
+
+      /* 关键属性 */
+    overflow: auto; /* 自动显示滚动条 */
+    -ms-overflow-style: none; /* 适用于 Internet Explorer 和旧版 Edge */
+    scrollbar-width: none; /* 适用于 Firefox */
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Webkit 浏览器 */
+#app::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 */
+}
+
+.workspace-container {
+  width: 60%;
+  min-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  padding: 25px;
+  border-radius: var(--el-border-radius-base);
+  box-shadow: var(--el-box-shadow);
+}
+
+think {
+  font-size: 12px;
+}
+
+.box-radius {
+  border: 1px solid var(--el-border-color);
+  border-radius: var(--el-border-radius-round);
+  box-shadow: var(--el-box-shadow-light);
+}
+
+.vertical_middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sticky-bottom {
+    bottom: 300px;
+    position: sticky;
+}
+
+.auto-fixed-container {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.auto-follow-container {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.full-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.center-container {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
