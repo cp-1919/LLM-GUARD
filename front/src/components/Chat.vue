@@ -76,7 +76,7 @@ const onEncrypt = async () => {
   await navigator.clipboard.writeText(lang.reply_in_lang+res)
   input_select.value = []
   input_disabled.value = false
-  input.value = ''
+  input.value = lang.reply_in_lang+res
 }
 
 const onGPTCalled = async () => {
@@ -120,8 +120,6 @@ const onGPTCalled = async () => {
   window.messages = messages.value
   new_chunk_content.value = ''
   await api().file.update_history(window.history_idx, window.messages)
-  original_prompt = ''
-  refused_prompt = ''
   input_disabled.value = false
   window.generating = false
 }
@@ -203,12 +201,14 @@ const onUpdateLLM = async (done) => {
     <div class="full-container" v-if="mode=='chat'">
       <div class="auto-follow-container sticky-bottom" ref="scroll_container">
         <div class="transition-box workspace-container" ref="scroll_body">
-          <MdPreview :modelValue="lang.chat_notice"/>
-          <div v-for="message in messages">
-            <MdPreview v-if="message.role=='assistant'" :modelValue="message.content"/>
-            <div class="box-radius question-box" v-if="message.role=='user'">{{ message.content }}</div>
+          <div class="allow-copy">
+            <MdPreview :modelValue="lang.chat_notice"/>
+            <div v-for="message in messages">
+              <MdPreview v-if="message.role=='assistant'" :modelValue="message.content"/>
+              <div class="box-radius question-box" v-if="message.role=='user'">{{ message.content }}</div>
+            </div>
+            <MdPreview :modelValue="new_chunk_content"/>
           </div>
-          <MdPreview :modelValue="new_chunk_content"/>
         </div>
       </div>
 
@@ -321,6 +321,11 @@ const onUpdateLLM = async (done) => {
 .input-box-btn-right {
   margin-left: auto;
   margin-right: 5px;
+}
+
+.allow-copy {
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 </style>

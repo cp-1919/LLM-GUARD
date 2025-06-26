@@ -16,6 +16,7 @@ class API:
         self.file._vdb = None
         os.kill(self.llm._pipe.pid, signal.CTRL_C_EVENT)
         os.kill(os.getpid(), signal.SIGTERM)
+        exit()
 
     def is_new(self):
         return self.config._is_new

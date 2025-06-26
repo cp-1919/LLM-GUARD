@@ -1,5 +1,12 @@
 # LLM-GUARD 项目说明
 
+## 0. 直接使用
+从SourceForge中直接下载可执行文件。
+
+[https://sourceforge.net/projects/llm-guard/files/latest/download](https://sourceforge.net/projects/llm-guard/files/latest/download)
+
+运行后，应用程序及资源会自动解压在文件所在目录。再次运行时，直接运行 LLM-GUARD.exe。
+
 ## 1. 目录结构
 ```text
 |--llm-guard

@@ -28,3 +28,4 @@ pyinstaller -D -w `
   -i ./llm-guard.ico `
   main.py
 ```
+
