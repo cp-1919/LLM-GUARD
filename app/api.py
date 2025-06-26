@@ -1,5 +1,6 @@
 import signal
 import os
+import sys
 from .apis.window import Window
 from .apis.llm import LLM
 from .apis.file import File
@@ -14,9 +15,15 @@ class API:
 
     def exit(self):
         self.file._vdb = None
-        os.kill(self.llm._pipe.pid, signal.CTRL_C_EVENT)
-        os.kill(os.getpid(), signal.SIGTERM)
-        exit()
+        try:
+            os.kill(self.llm._pipe.pid, signal.CTRL_C_EVENT)
+        except Exception:
+            pass
+        try:
+            os.kill(os.getpid(), signal.SIGTERM)
+        except Exception:
+            pass
+        sys.exit(0)
 
     def is_new(self):
         return self.config._is_new
