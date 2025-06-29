@@ -1,8 +1,11 @@
 import webview
+import sys
+import io
 import os
 from app.api import API
 
 if __name__ == '__main__':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
     api = API()
     api._window = webview.create_window(
         'LLM-GUARD',

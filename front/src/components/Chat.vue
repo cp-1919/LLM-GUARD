@@ -73,10 +73,13 @@ const onEncrypt = async () => {
   input.value = lang.waiting_encrypt
   const original_prompt = file_info+'\n'+input_val
   const res = await api().llm.encrypt(original_prompt)
-  await navigator.clipboard.writeText(lang.reply_in_lang+res)
   input_select.value = []
   input_disabled.value = false
   input.value = lang.reply_in_lang+res
+}
+
+const onCopy = async () => {
+  await navigator.clipboard.writeText(input.value)
 }
 
 const onGPTCalled = async () => {
@@ -204,6 +207,7 @@ const onUpdateLLM = async (done) => {
           <div class="allow-copy">
             <MdPreview :modelValue="lang.chat_notice"/>
             <div v-for="message in messages">
+              <br>
               <MdPreview v-if="message.role=='assistant'" :modelValue="message.content"/>
               <div class="box-radius question-box" v-if="message.role=='user'">{{ message.content }}</div>
             </div>
@@ -218,14 +222,25 @@ const onUpdateLLM = async (done) => {
             <el-button class="input-box-btn-left" type="success" :disabled="input_disabled" @click="select_model_panel=true" link>@{{ llm_config.chat_model }}</el-button>
             <div class="input-box-btn-right">
               <el-button-group class="input-box-btn">
-                <el-button type="success" :disabled="input_disabled" @click="onOpenHistory" round>{{ lang.history }}</el-button>
-                <el-button type="success" :disabled="input_disabled" @click="createHistory" round>{{ lang.new_chat }}</el-button>
+                <el-tooltip :content="lang.chat_history" placement="bottom" effect="light">
+                  <el-button type="success" :disabled="input_disabled" @click="onOpenHistory" round>{{ lang.history }}</el-button>
+                </el-tooltip>
+                <el-tooltip :content="lang.create_new_chat" placement="bottom" effect="light">
+                  <el-button type="success" :disabled="input_disabled" @click="createHistory" round>{{ lang.new_chat }}</el-button>
+                </el-tooltip>
+                <el-tooltip :content="lang.encrypt_query" placement="bottom" effect="light">
+                  <el-button class="input-box-btn" type="success" :disabled="input_disabled" @click="onEncrypt" round>{{ lang.encrypt }}</el-button>
+                </el-tooltip>
+                <el-tooltip :content="lang.copy_input_box" placement="bottom" effect="light">
+                  <el-button class="input-box-btn" type="success" :disabled="input_disabled" @click="onCopy" round>{{ lang.copy }}</el-button>
+                </el-tooltip>
               </el-button-group>
-              <el-button class="input-box-btn" type="success" :disabled="input_disabled" @click="onEncrypt" round>{{ lang.copy_encrypt }}</el-button>
-              <el-button class="input-box-btn" type="success" :disabled="input_disabled" @click="api().file.add()" :icon="DocumentAdd" circle size="large"/>
-              <el-button class="input-box-btn" type="success" :disabled="input_disabled" @click="onGPTCalled" :icon="Promotion" circle size="large"/>
-              <el-button-group class="input-box-btn">
-              </el-button-group>
+              <el-tooltip :content="lang.import_file" placement="bottom" effect="light">
+                <el-button class="input-box-btn" type="success" :disabled="input_disabled" @click="api().file.add()" :icon="DocumentAdd" circle size="large"/>
+              </el-tooltip>
+              <el-tooltip :content="lang.send" placement="bottom" effect="light">
+                <el-button class="input-box-btn" type="success" :disabled="input_disabled" @click="onGPTCalled" :icon="Promotion" circle size="large"/>
+              </el-tooltip>
             </div>
             </div>
         </input-box>
@@ -290,12 +305,16 @@ const onUpdateLLM = async (done) => {
 .question-box {
   display: flex;
   width: fit-content;
-  max-width: 60%;
+  max-width: 80%;
   margin-left: auto;
   margin-right: 20px;
   padding: 10px;
   background-color: #f3f4f6;
   border: transparent;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow: hidden;
 }
 
 .history-container {

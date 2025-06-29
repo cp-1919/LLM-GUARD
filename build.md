@@ -29,3 +29,23 @@ pyinstaller -D -w `
   main.py
 ```
 
+## 3. debug版本构建
+```bash
+pyinstaller -D `
+  -n LLM-GUARD-test `
+  --add-data "app/models;models" `
+  --add-data "app/ollama;ollama" `
+  --add-data "app/config.json;." `
+  --add-data "app/tiktoken_resource;tiktoken_resource" `
+  --hidden-import=tiktoken_ext `
+  --hidden-import=tiktoken_ext.openai_public `
+  --hidden-import=chromadb.telemetry.product.posthog `
+  --hidden-import=chromadb.api.rust `
+  --collect-data=chromadb `
+  --add-data "app/tesseract;tesseract" `
+  --add-data "front/dist;front" `
+  --runtime-tmpdir ./temp `
+  -i ./llm-guard.ico `
+  main.py
+```
+
